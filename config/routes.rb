@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root "pages#home"
 
-  resources :campsites, only: [:index, :create, :destroy]
+  resources :campsites, only: :index
 
   resources :users, except: [:index]
 

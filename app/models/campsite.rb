@@ -3,7 +3,7 @@ class Campsite < ActiveRecord::Base
     # register for API keys: http://developer.active.com/apps/myapps
     base_domain = "http://api.amp.active.com/camping/campgrounds"
     end_point = URI(base_domain + "?pstate=CA&pname=#{query}&api_key=#{ENV['CAMPGROUND_API_KEY']}")
-    response = Net::HTTP.get(end_point)
-    p response
+    response = Hash.from_xml(Net::HTTP.get(end_point))
+    campsites = response["resultset"]["result"]
   end
 end

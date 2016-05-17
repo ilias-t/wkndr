@@ -6,13 +6,5 @@ var wkndr = {
     $.get("/campsites?campsite=" + campsiteName, function(res) {
       console.log("res:", res);
     })
-    // fetch("/campsites?campsite=" + campsiteName)
-    // .then(function(res) {
-    //   console.log("res:", res);
-    //   return res.json();
-    // })
-    // .then(function(data) {
-    //   window.data = data;
-    // })
   }
 }

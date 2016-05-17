@@ -3,8 +3,8 @@ class CampsitesController < ApplicationController
     #TODO: respond to html requests with page & json requests with data
     if is_xrh_request # inherited from application controller
       binding.pry
-      campsite_name = params[:campsite]
-      render json: campsite_name
+      campsites = Campsite.search(params[:campsite])
+      render json: campsites
     else
       render :index
     end

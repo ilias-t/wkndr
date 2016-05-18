@@ -15,11 +15,11 @@ var wkndr = {
     if (response instanceof Array) { // determine if res is a single object or a collection
       const campsites = response
       campsites.forEach(function(campsite) {
-        html += HandlebarsTemplates['campsites/show'](campsite) // current solution as handelbars partials don't enjoy the asset pipeline
+        html += HandlebarsTemplates['campsites/index'](campsite) // current solution as handelbars partials don't enjoy the asset pipeline
       })
     } else if (response instanceof Object) {
       const campsite = response
-      html = HandlebarsTemplates['campsites/show'](campsite)
+      html = HandlebarsTemplates['campsites/index'](campsite)
     } else { html = "No results found." }
     $("#campsites-container").html(html)
   }
